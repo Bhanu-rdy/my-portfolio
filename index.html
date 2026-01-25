@@ -739,10 +739,9 @@
 
     <script>
         // Initialize EmailJS with your public key
-        (function () {
-            emailjs.init("CbYnHc1MFuKzxwceN");
+        (function(){
+            emailjs.init("CbYnHc1MFuKzxwceN"); 
         })();
-
         // Load the uploaded profile image
         window.addEventListener('DOMContentLoaded', async () => {
             try {
@@ -824,7 +823,6 @@
             // EmailJS Configuration
             const serviceID = 'service_v7odlu4';
             const templateID = 'template_xrcl0mp';
-
             const templateParams = {
                 from_name: senderName,
                 from_email: senderEmail,
@@ -855,5 +853,3 @@
         }
     </script>
 </body>
-
-</html>
