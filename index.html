@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,7 +32,7 @@
             background: rgba(255, 255, 255, 0.95);
             padding: 40px;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
             margin-bottom: 30px;
             text-align: center;
             backdrop-filter: blur(10px);
@@ -44,7 +45,7 @@
             border-radius: 50%;
             object-fit: cover;
             border: 5px solid #667eea;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
             margin-bottom: 20px;
             animation: fadeInDown 1s ease;
             margin-top: 30px;
@@ -96,11 +97,11 @@
         nav {
             position: absolute;
             top: 20px;
-            right: 20px;
+            left: 20px;
             display: flex;
             gap: 15px;
             flex-wrap: wrap;
-            justify-content: flex-end;
+            justify-content: flex-start;
         }
 
         .nav-btn {
@@ -118,12 +119,12 @@
         .nav-btn:hover {
             background: #764ba2;
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
 
         .nav-btn.active {
             background: #764ba2;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
 
         .section {
@@ -131,7 +132,7 @@
             padding: 30px;
             border-radius: 15px;
             margin-bottom: 25px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
             animation: fadeInUp 0.5s ease;
             display: none;
         }
@@ -171,7 +172,7 @@
 
         .skill-category:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
         }
 
         .skill-category h3 {
@@ -192,7 +193,7 @@
 
         .project-card:hover {
             transform: translateX(10px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
         .project-card h3 {
@@ -211,7 +212,22 @@
             margin: 5px 5px 5px 0;
         }
 
-        .education-item, .certification-item {
+        .project-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            margin: 15px 0;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .project-image:hover {
+            transform: scale(1.02);
+        }
+
+        .education-item,
+        .certification-item {
             background: #f8f9fa;
             padding: 20px;
             border-radius: 10px;
@@ -219,7 +235,8 @@
             border-left: 4px solid #764ba2;
         }
 
-        .education-item h3, .certification-item h3 {
+        .education-item h3,
+        .certification-item h3 {
             color: #764ba2;
             margin-bottom: 8px;
         }
@@ -254,6 +271,7 @@
                 opacity: 0;
                 transform: translateY(-20px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -265,6 +283,7 @@
                 opacity: 0;
                 transform: translateY(20px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -409,16 +428,22 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
         }
 
         @keyframes slideIn {
-            from { 
+            from {
                 opacity: 0;
                 transform: translateY(-50px);
             }
-            to { 
+
+            to {
                 opacity: 1;
                 transform: translateY(0);
             }
@@ -432,7 +457,7 @@
             nav {
                 position: relative;
                 top: 0;
-                right: 0;
+                left: 0;
                 justify-content: center;
                 margin-top: 20px;
             }
@@ -451,33 +476,64 @@
                 padding: 8px 15px;
             }
         }
+
         @media (max-width: 500px) {
+            header {
+                padding: 40px 15px;
+            }
+
             h1 {
-                font-size: 1.5em;
-                white-space: nowrap;
+                font-size: 1.4em;
+                line-height: 1.3;
+                word-wrap: break-word;
+                overflow-wrap: break-word;
+                padding: 0 10px;
             }
 
             .tagline {
-                font-size: 0.9em;
+                font-size: 0.85em;
+                line-height: 1.4;
+                padding: 0 10px;
             }
 
             .profile-photo {
-                width: 150px;
-                height: 150px;
+                width: 140px;
+                height: 140px;
+            }
+
+            .contact-info {
+                width: 100%;
+                padding: 0 10px;
+            }
+
+            .contact-item {
+                width: 100%;
+                justify-content: center;
+                text-align: center;
+                font-size: 0.9em;
+            }
+
+            .contact-item a {
+                word-break: break-all;
             }
         }
 
         @media (max-width: 380px) {
             h1 {
-                font-size: 1.3em;
+                font-size: 1.2em;
             }
 
             .tagline {
-                font-size: 0.8em;
+                font-size: 0.75em;
+            }
+
+            .contact-item {
+                font-size: 0.85em;
             }
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <header>
@@ -488,6 +544,7 @@
                 <button class="nav-btn" onclick="showSection('projects')">Projects</button>
                 <button class="nav-btn" onclick="showSection('certifications')">Certifications</button>
                 <button class="nav-btn" onclick="showSection('experience')">Experience</button>
+                <button class="nav-btn" onclick="openContactModal()">Contact Me</button>
             </nav>
             <img class="profile-photo" src="./images/my-photo.jpeg" alt="Bhanu Prakash Reddy Vangala" id="profilePhoto">
             <h1>Bhanu Prakash Reddy Vangala</h1>
@@ -503,7 +560,8 @@
                     📍 Tirupati, India
                 </div>
                 <div class="contact-item">
-                    💼 <a href="https://www.linkedin.com/in/bhanu-prakash-reddy-vangala-548111248" target="_blank">LinkedIn</a>
+                    💼 <a href="https://www.linkedin.com/in/bhanu-prakash-reddy-vangala-548111248"
+                        target="_blank">LinkedIn</a>
                 </div>
                 <div class="contact-item">
                     💻 <a href="https://github.com/Bhanu-rdy" target="_blank">GitHub</a>
@@ -514,10 +572,10 @@
         <div class="section" id="about">
             <h2>About Me</h2>
             <p class="about-text">
-                Passionate Software Engineer with a solid foundation in problem-solving and software development. 
-                I have solved 50+ coding challenges across various platforms including LeetCode, demonstrating my 
-                commitment to continuous learning and technical excellence. I am dedicated to building real-world 
-                solutions through innovation, scalability, and performance optimization. Currently seeking opportunities 
+                Passionate Software Engineer with a solid foundation in problem-solving and software development.
+                I have solved 50+ coding challenges across various platforms including LeetCode, demonstrating my
+                commitment to continuous learning and technical excellence. I am dedicated to building real-world
+                solutions through innovation, scalability, and performance optimization. Currently seeking opportunities
                 to contribute to dynamic teams and deliver impactful software solutions.
             </p>
         </div>
@@ -527,11 +585,15 @@
             <div class="skills-grid">
                 <div class="skill-category">
                     <h3>Programming</h3>
-                    <p>Java (Strong OOPs Concepts), Data Structures & Algorithms</p>
+                    <p>Java (With Strong OOPs Concepts)</p>
                 </div>
                 <div class="skill-category">
-                    <h3>Web Technologies</h3>
+                    <h3>Frontend</h3>
                     <p>HTML, CSS, JavaScript</p>
+                </div>
+                <div class="skill-category">
+                    <h3>Backend</h3>
+                    <p>SpringBoot, RESTful APIs</p>
                 </div>
                 <div class="skill-category">
                     <h3>Databases</h3>
@@ -566,14 +628,22 @@
         <div class="section" id="projects">
             <h2>Projects</h2>
             <div class="project-card">
-                <h3>🛠️ Comprehensive Data Structures Toolkit</h3>
+                <h3>💰 Dynamic Pricing E-Commerce Engine</h3>
                 <div>
                     <span class="tech-stack">Java</span>
+                    <span class="tech-stack">SpringBoot</span>
+                    <span class="tech-stack">RESTful APIs</span>
+                    <span class="tech-stack">JavaScript</span>
+                        <span class="tech-stack">CSS</span>
+                        <span class="tech-stack">HTML</span>
                 </div>
-                <p>Developed a menu-driven Java program to demonstrate operations on Strings, ArrayLists, HashSets, 
-                TreeSet, HashMap, and TreeMap. Implemented key functions like insertion, deletion, searching, and 
-                sorting with interactive user input.</p>
-                <a href="https://github.com/Bhanu-rdy/DataStructures-ToolKit-inJava" target="_blank" class="project-link">View Project →</a>
+                <img src="./images/dynamic-pricing-project.png" alt="Dynamic Pricing E-Commerce Engine"
+                    class="project-image">
+                <p>Built a full-stack e-commerce platform with intelligent dynamic pricing algorithm using Spring
+                    Boot and REST APIs. Implemented demand-based pricing, scarcity premium mechanism, and automated
+                    competitor price matching, reducing manual pricing effort by 90%.</p>
+                <a href="https://github.com/Bhanu-rdy/dynamic-pricing-engine" target="_blank" class="project-link">View
+                    Project →</a>
             </div>
             <div class="project-card">
                 <h3>💱 Currency Converter</h3>
@@ -583,10 +653,13 @@
                     <span class="tech-stack">JavaScript</span>
                     <span class="tech-stack">API Integration</span>
                 </div>
-                <p>Created a responsive currency converter that uses live exchange rate API to perform real-time 
-                currency conversions. Implemented interactive UI with DOM manipulation and handled various currencies 
-                with accurate conversions.</p>
-                <a href="https://github.com/Bhanu-rdy/Currency-Converter" target="_blank" class="project-link">View Project →</a>
+                <img src="./images/currency-converter-project.jpeg" alt="Currency Converter" class="project-image">
+                <p>Created a responsive currency converter that uses live exchange rate API to perform real-time
+                    currency conversions. Implemented interactive UI with DOM manipulation and handled various
+                    currencies
+                    with accurate conversions.</p>
+                <a href="https://github.com/Bhanu-rdy/Currency-Converter" target="_blank" class="project-link">View
+                    Project →</a>
             </div>
             <div class="project-card">
                 <h3>🎮 Rock-Paper-Scissors: A Web-Based Game</h3>
@@ -595,9 +668,12 @@
                     <span class="tech-stack">CSS</span>
                     <span class="tech-stack">JavaScript</span>
                 </div>
-                <p>Built a web-based Rock-Paper-Scissors game with responsive UI and smooth gameplay. Implemented 
-                real-time DOM updates, dynamic score tracking, and instant feedback for an engaging user experience.</p>
-                <a href="https://github.com/Bhanu-rdy/Rock-Paper-Scissors-Game" target="_blank" class="project-link">View Project →</a>
+                <img src="./images/rock-paper-scissors-project.jpeg" alt="Rock-Paper-Scissors Game" class="project-image">
+                <p>Built a web-based Rock-Paper-Scissors game with responsive UI and smooth gameplay. Implemented
+                    real-time DOM updates, dynamic score tracking, and instant feedback for an engaging user experience.
+                </p>
+                <a href="https://github.com/Bhanu-rdy/Rock-Paper-Scissors-Game" target="_blank"
+                    class="project-link">View Project →</a>
             </div>
         </div>
 
@@ -623,8 +699,9 @@
                 <h3>Java Programming Intern</h3>
                 <p><strong>Digital Bhem</strong> | Virtual</p>
                 <p><span class="year">March 2025 - April 2025 (6 Weeks)</span></p>
-                <p>Completed a short-term internship focused on core Java programming and object-oriented concepts, 
-                developing hands-on skills in data structures, algorithms, and Java-based application development.</p>
+                <p>Completed a short-term internship focused on core Java programming and object-oriented concepts,
+                    developing hands-on skills in data structures, algorithms, and Java-based application development.
+                </p>
             </div>
         </div>
 
@@ -641,7 +718,8 @@
                 <form id="contactForm" onsubmit="sendEmail(event)">
                     <div class="form-group">
                         <label for="senderEmail">Your Email Address *</label>
-                        <input type="email" id="senderEmail" name="senderEmail" required placeholder="your.email@example.com">
+                        <input type="email" id="senderEmail" name="senderEmail" required
+                            placeholder="your.email@example.com">
                     </div>
                     <div class="form-group">
                         <label for="senderName">Your Name (Optional)</label>
@@ -649,7 +727,8 @@
                     </div>
                     <div class="form-group">
                         <label for="message">Your Message *</label>
-                        <textarea id="message" name="message" required placeholder="Type your message here..."></textarea>
+                        <textarea id="message" name="message" required
+                            placeholder="Type your message here..."></textarea>
                     </div>
                     <button type="submit" class="send-btn" id="sendBtn">Send Message</button>
                     <div id="statusMessage" class="status-message"></div>
@@ -660,9 +739,8 @@
 
     <script>
         // Initialize EmailJS with your public key
-        // IMPORTANT: Replace 'YOUR_PUBLIC_KEY' with your actual EmailJS public key
-        (function(){
-            emailjs.init("CbYnHc1MFuKzxwceN"); 
+        (function () {
+            emailjs.init("CbYnHc1MFuKzxwceN");
         })();
 
         // Load the uploaded profile image
@@ -720,7 +798,7 @@
         }
 
         // Close modal when clicking outside
-        window.onclick = function(event) {
+        window.onclick = function (event) {
             const modal = document.getElementById('contactModal');
             if (event.target === modal) {
                 closeContactModal();
@@ -730,7 +808,7 @@
         // Send Email Function using EmailJS
         async function sendEmail(event) {
             event.preventDefault();
-            
+
             const sendBtn = document.getElementById('sendBtn');
             const statusMessage = document.getElementById('statusMessage');
             const senderEmail = document.getElementById('senderEmail').value;
@@ -744,10 +822,9 @@
             statusMessage.textContent = '';
 
             // EmailJS Configuration
-            // IMPORTANT: Replace these with your actual EmailJS credentials
-            const serviceID = 'service_v7odlu4';      // Get from EmailJS dashboard
-            const templateID = 'template_xrcl0mp';    // Get from EmailJS dashboard
-            
+            const serviceID = 'service_v7odlu4';
+            const templateID = 'template_xrcl0mp';
+
             const templateParams = {
                 from_name: senderName,
                 from_email: senderEmail,
@@ -757,15 +834,15 @@
 
             try {
                 await emailjs.send(serviceID, templateID, templateParams);
-                
+
                 statusMessage.className = 'status-message success';
                 statusMessage.textContent = '✅ Message sent successfully! I will get back to you soon.';
                 document.getElementById('contactForm').reset();
-                
+
                 setTimeout(() => {
                     closeContactModal();
                 }, 2500);
-                
+
             } catch (error) {
                 console.error('EmailJS Error:', error);
                 statusMessage.className = 'status-message error';
@@ -778,4 +855,5 @@
         }
     </script>
 </body>
+
 </html>
